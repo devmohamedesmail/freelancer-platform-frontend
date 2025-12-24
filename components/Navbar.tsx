@@ -13,6 +13,7 @@ import {
     DropdownMenuSubContent,
     DropdownMenuSubTrigger,
 } from "@/components/ui/dropdown-menu";
+import Link from "next/link";
 
 const categories = [
     {
@@ -131,16 +132,16 @@ export function Navbar() {
                         </div>
 
                         {/* Courses */}
-                        <Button variant="ghost" className="flex items-center gap-2">
+                        <Link href={'/courses'} className="flex items-center gap-2">
                             <GraduationCap className="w-4 h-4" />
                             Courses
-                        </Button>
+                        </Link>
 
                         {/* Store */}
-                        <Button variant="ghost" className="flex items-center gap-2">
+                        <Link href={'/store'}  className="flex items-center gap-2">
                             <ShoppingBag className="w-4 h-4" />
                             Dev Store
-                        </Button>
+                        </Link>
                     </div>
 
                     {/* Right Side Icons */}
