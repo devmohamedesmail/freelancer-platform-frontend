@@ -1,0 +1,104 @@
+{
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "forgot_password": "Forgot Password?",
+    "remember_me": "Remember Me",
+    "reset_password": "Reset Password",
+    "new_password": "New Password",
+    "confirm_new_password": "Confirm New Password",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout_message": "Are you sure you want to logout?",
+    "logout_confirm": "Logout",
+    "logout_cancel": "Cancel",
+    "login_message": "Please login to continue",
+    "login_confirm": "Login",
+    "login_cancel": "Cancel",
+    "register_message": "Please register to continue",
+    "register_confirm": "Register",
+    "register_cancel": "Cancel",
+    "join-our-community": "Join Our Community",
+    "create-your-account": "Create Your Account",
+    "register_description": "Start your journey to becoming a top freelancer",
+    "full-name": "Full Name",
+    "or": "Or Register With",
+    "google": "Google",
+    "github": "Github",
+    "already-have-account": "Already have an account?",
+    "name_min_length": " Name must be at least 3 characters",
+    "name_required": "Name is required",
+    "email_invalid": "Email is invalid",
+    "email_required": "Email is required",
+    "password_min_length": "Password must be at least 8 characters",
+    "password_required": "Password is required",
+    "create_account": "Create Account",
+    "welcome_back": " Welcome Back",
+    "login_to_continue": "Sign in to access your dashboard and continue learning",
+    "forget_password": "Forget password"
+  },
+  "navbar": {
+    "categories": "Categories",
+    "search_placeholder": "Search for a service",
+    "courses": "Courses",
+    "dev_store": " Store ",
+    "theme": "Light / Dark"
+  },
+  "hero": {
+    "badge": "Find the Best Services",
+    "title_highlight": "Find the Right Service",
+    "title_part2": "to Complete Your Project Easily and Quickly",
+    "subtitle": "From logo design to website development, we connect you with top freelancers to get your work done with high quality",
+    "search_placeholder": "Search for the service you need...",
+    "search_button": "Search Now",
+    "logo_design": "Creative Logo Design",
+    "wordpress": "Professional WordPress Development",
+    "ai_development": "AI Solutions Development",
+    "video_editing": "High-Quality Video Editing",
+    "seo": "Boost Your Website SEO",
+    "popular": "Popular Services"
+  },
+  "categories": {
+    "title_part1": "Explore All",
+    "title_highlight": "Service Categories",
+    "subtitle": "Find the service you need from a wide range of specialized categories",
+    "view_all": "View All"
+  },
+  "top_freelancers": {
+    "badge": "Top Freelancers",
+    "title_highlight": "Meet the Best Experts",
+    "subtitle": "Find talented freelancers to complete your project quickly and with high quality",
+    "view_all": "View All",
+    "view_all_freelancers": "View All Freelancers"
+  },
+  "common": {
+    "view_all": "View All",
+    "view_profile": " View Profile ",
+    "home": "Home",
+    "account": "Account",
+    "courses": "Courses",
+    "store": "Store"
+  },
+  "courses": {
+    "badge": "Courses",
+    "title_highlight": "Learn New Skills",
+    "subtitle": "Browse our professional courses and start learning today",
+    "view_all": "View All Courses"
+  },
+  "store": {
+    "title": "Developer Store",
+    "description": "Explore tools, resources, and digital products made for developers"
+  },
+  "newsletter":{
+    "title": "Subscribe to our newsletter",
+    "description": "Stay up to date with the latest news and updates from our platform",
+    "placeholder": "Enter your email address",
+    "button": "Subscribe",
+    "enter_email":"Enter Your Email Address"
+  }
+ 
+}

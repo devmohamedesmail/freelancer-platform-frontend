@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import { ShoppingBag, Code2, Wrench, Zap, ArrowRight, Tag } from "lucide-react";
-import { Card, CardContent } from "./ui/card";
-import { Button } from "./ui/button";
+import { ShoppingBag, Code2, Zap, ArrowRight, Tag } from "lucide-react";
+import { Card, CardContent } from "../ui/card";
+import { Button } from "../ui/button";
+import { useTranslation } from "react-i18next";
 
 const tools = [
     {
@@ -45,6 +46,7 @@ const tools = [
 ];
 
 export function DevStoreSection() {
+    const {t}=useTranslation();
     return (
         <section className="py-20 px-4 bg-muted/30">
             <div className="max-w-7xl mx-auto">
@@ -54,17 +56,11 @@ export function DevStoreSection() {
                         <div className="flex items-center gap-2 mb-2">
                             <ShoppingBag className="w-6 h-6 text-primary" />
                             <span className="text-sm font-semibold text-primary uppercase tracking-wide">
-                                Developer Store
+                                {t("store.title")}
                             </span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                            Premium{" "}
-                            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                                Dev Tools
-                            </span>
-                        </h2>
                         <p className="text-lg text-muted-foreground max-w-2xl">
-                            Boost your productivity with professional tools and resources
+                            {t("store.description")}
                         </p>
                     </div>
                     <Button
@@ -72,7 +68,7 @@ export function DevStoreSection() {
                         size="lg"
                         className="hidden md:flex group"
                     >
-                        Browse Store
+                        {t("common.view_all")}
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                 </div>

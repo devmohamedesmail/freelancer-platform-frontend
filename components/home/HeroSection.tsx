@@ -4,8 +4,20 @@ import React from "react";
 import { Search, Sparkles } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
+import "@/lib/i18n";
 
 export function HeroSection() {
+    const { t } = useTranslation();
+
+    const popularTags = [
+        t('hero.logo_design'),
+        t('hero.wordpress'),
+        t('hero.ai_development'),
+        t('hero.video_editing'),
+        t('hero.seo')
+    ];
+
     return (
         <section className="relative pt-32 pb-20 px-4 overflow-hidden">
             {/* Background Gradient */}
@@ -19,24 +31,23 @@ export function HeroSection() {
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6 animate-fade-in">
                         <Sparkles className="w-4 h-4 text-primary" />
                         <span className="text-sm font-medium text-primary">
-                            #1 Freelance Platform
+                            {t('hero.badge')}
                         </span>
                     </div>
 
                     {/* Heading */}
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
-                        Find the Perfect{" "}
+                    <h1 className="text-2xl md:text-6xl lg:text-4xl font-bold mb-6 animate-fade-in-up">
                         <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
-                            Freelancer
+                            {t('hero.title_highlight')}
                         </span>
-                        <br />
-                        for Your Project
                     </h1>
+                    <h5 className="text-md md:text-xl lg:text-xl font-bold mb-6 animate-fade-in-up">
+                        {t('hero.title_part2')}
+                    </h5>
 
                     {/* Subheading */}
                     <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-                        Connect with talented professionals from around the world. Get your
-                        project done with quality and expertise.
+                        {t('hero.subtitle')}
                     </p>
 
                     {/* Search Bar */}
@@ -46,30 +57,28 @@ export function HeroSection() {
                                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                                 <Input
                                     type="search"
-                                    placeholder="What service are you looking for?"
+                                    placeholder={t('hero.search_placeholder')}
                                     className="pl-12 h-14 border-0 bg-transparent text-base focus-visible:ring-0"
                                 />
                             </div>
                             <Button className="h-14 px-8 gradient-primary text-white text-base font-semibold hover:opacity-90 transition-opacity">
-                                Search
+                                {t('hero.search_button')}
                             </Button>
                         </div>
                     </div>
 
                     {/* Popular Searches */}
                     <div className="mt-8 animate-fade-in-up animation-delay-600">
-                        <p className="text-sm text-muted-foreground mb-3">Popular:</p>
+                        <p className="text-sm text-muted-foreground mb-3">{t('hero.popular')}</p>
                         <div className="flex flex-wrap justify-center gap-2">
-                            {["Logo Design", "WordPress", "AI Development", "Video Editing", "SEO"].map(
-                                (tag) => (
-                                    <button
-                                        key={tag}
-                                        className="px-4 py-2 bg-muted hover:bg-primary/10 hover:text-primary rounded-full text-sm transition-all"
-                                    >
-                                        {tag}
-                                    </button>
-                                )
-                            )}
+                            {popularTags.map((tag) => (
+                                <button
+                                    key={tag}
+                                    className="px-4 py-2 bg-muted hover:bg-primary/10 hover:text-primary rounded-full text-sm transition-all"
+                                >
+                                    {tag}
+                                </button>
+                            ))}
                         </div>
                     </div>
                 </div>

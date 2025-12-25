@@ -1,11 +1,12 @@
-import { Navbar } from "@/components/Navbar";
-import { HeroSection } from "@/components/HeroSection";
-import { TopFreelancersSection } from "@/components/TopFreelancersSection";
-import { CategoriesSection } from "@/components/CategoriesSection";
+import { Navbar } from "@/components/common/navbar";
+import { HeroSection } from "@/components/home/HeroSection";
+import { TopFreelancersSection } from "@/components/home/TopFreelancersSection";
+import { CategoriesSection } from "@/components/home/CategoriesSection";
 import { ForClientsSection } from "@/components/ForClientsSection";
-import { CoursesSection } from "@/components/CoursesSection";
-import { DevStoreSection } from "@/components/DevStoreSection";
-import { Footer } from "@/components/Footer";
+import { CoursesSection } from "@/components/home/CoursesSection";
+import { DevStoreSection } from "@/components/home/DevStoreSection";
+import { Footer } from "@/components/common/footer";
+import BottomNavigation from "@/components/common/bottom-navigation";
 
 export default function Home() {
   return (
@@ -15,11 +16,12 @@ export default function Home() {
         <HeroSection />
         <TopFreelancersSection />
         <CategoriesSection />
-        <ForClientsSection />
+        {/* <ForClientsSection /> */}
         <CoursesSection />
         <DevStoreSection />
       </main>
       <Footer />
+      <BottomNavigation />
     </div>
   );
 }

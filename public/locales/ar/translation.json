@@ -1,0 +1,103 @@
+{
+    "auth": {
+        "login": "تسجيل الدخول",
+        "logout": "تسجيل الخروج",
+        "register": "إنشاء حساب",
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور",
+        "confirm_password": "تأكيد كلمة المرور",
+        "forgot_password": "هل نسيت كلمة المرور؟",
+        "remember_me": "تذكرني",
+        "reset_password": "إعادة تعيين كلمة المرور",
+        "new_password": "كلمة مرور جديدة",
+        "confirm_new_password": "تأكيد كلمة المرور الجديدة",
+        "profile": "الملف الشخصي",
+        "settings": "الإعدادات",
+        "logout_message": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+        "logout_confirm": "تسجيل الخروج",
+        "logout_cancel": "إلغاء",
+        "login_message": "من فضلك سجل الدخول للمتابعة",
+        "login_confirm": "تسجيل الدخول",
+        "login_cancel": "إلغاء",
+        "register_message": "من فضلك قم بإنشاء حساب للمتابعة",
+        "register_confirm": "إنشاء حساب",
+        "register_cancel": "إلغاء",
+        "join-our-community": "انضم إلى مجتمعنا",
+        "create-your-account": "أنشئ حسابك",
+        "register_description": "ابدأ رحلتك لتصبح فريلانسر محترف",
+        "full-name": "الاسم الكامل",
+        "or": "أو التسجيل باستخدام",
+        "google": "جوجل",
+        "github": "جيت هاب",
+        "already-have-account": "لديك حساب بالفعل؟",
+        "name_min_length": "يجب أن يحتوي الاسم على 3 أحرف على الأقل",
+        "name_required": "الاسم مطلوب",
+        "email_invalid": "البريد الإلكتروني غير صالح",
+        "email_required": "البريد الإلكتروني مطلوب",
+        "password_min_length": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
+        "password_required": "كلمة المرور مطلوبة",
+        "create_account": "إنشاء حساب",
+        "welcome_back": "مرحبًا بعودتك",
+        "login_to_continue": "سجّل الدخول للوصول إلى لوحة التحكم ومتابعة التعلم",
+        "forget_password": "نسيت كلمة المرور"
+    },
+    "navbar": {
+        "categories": "الفئات",
+        "search_placeholder": "ابحث عن خدمة",
+        "courses": "الدورات",
+        "dev_store": "المتجر",
+        "theme": "فاتح / داكن"
+    },
+    "hero": {
+        "badge": "اعثر على أفضل الخدمات",
+        "title_highlight": "ابحث عن الخدمة المناسبة",
+        "title_part2": "لتحقيق مشروعك بسهولة وسرعة",
+        "subtitle": "من تصميم الشعارات إلى تطوير المواقع، نحن نوفر لك أفضل الخبراء لإنجاز أعمالك بجودة عالية",
+        "search_placeholder": "ابحث عن الخدمة التي تحتاجها...",
+        "search_button": "ابحث الآن",
+        "logo_design": "تصميم شعارات مبتكرة",
+        "wordpress": "تطوير مواقع ووردبريس احترافية",
+        "ai_development": "تطوير حلول الذكاء الاصطناعي",
+        "video_editing": "تحرير الفيديوهات بجودة عالية",
+        "seo": "تحسين محركات البحث لموقعك",
+        "popular": "الأكثر شيوعًا"
+    },
+    "categories": {
+        "title_part1": "استكشف جميع",
+        "title_highlight": "فئات الخدمات",
+        "subtitle": "اعثر على الخدمة التي تحتاجها من بين العديد من الفئات المتنوعة والمتخصصة",
+        "view_all": "عرض الكل"
+    },
+    "top_freelancers": {
+        "badge": "أفضل المستقلين",
+        "title_highlight": "تعرف على أفضل الخبراء",
+        "subtitle": "اعثر على المستقلين الموهوبين لإنجاز مشروعك بسرعة وجودة عالية",
+        "view_all": "عرض الجميع",
+        "view_all_freelancers": "عرض جميع المستقلين"
+    },
+    "common": {
+        "view_all": "عرض الكل",
+        "view_profile": " عرض الملف الشخصي",
+        "home": "الرئيسية",
+        "account": "الحساب",
+        "courses": "الدورات",
+        "store": "المتجر"
+    },
+    "courses": {
+        "badge": "الدورات",
+        "title_highlight": "تعلّم مهارات جديدة",
+        "subtitle": "تصفح دوراتنا وابدأ رحلتك التعليمية اليوم",
+        "view_all": "عرض جميع الدورات"
+    },
+    "store": {
+        "title": "متجر المطورين",
+        "description": "اكتشف الأدوات والموارد والمنتجات الرقمية المصممة للمطورين"
+    },
+    "newsletter": {
+        "title": "اشترك في نشرتنا البريدية",
+        "description": "ابقَ على اطلاع بآخر الأخبار والتحديثات من منصتنا",
+        "placeholder": "أدخل بريدك الإلكتروني",
+        "button": "اشترك الآن",
+        "enter_email": "أدخل بريدك الإلكتروني"
+    }
+}

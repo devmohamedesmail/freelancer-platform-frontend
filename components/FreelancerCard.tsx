@@ -5,6 +5,7 @@ import { Star, MapPin, Briefcase, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 interface FreelancerCardProps {
     name: string;
@@ -29,6 +30,7 @@ export function FreelancerCard({
     skills,
     avatar,
 }: FreelancerCardProps) {
+    const {t}=useTranslation()
     return (
         <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
             <div className="gradient-card p-6">
@@ -108,7 +110,7 @@ export function FreelancerCard({
 
                 {/* Action Button */}
                 <Button className="w-full mt-4 gradient-primary text-white hover:opacity-90 transition-opacity">
-                    View Profile
+                    {t('common.view_profile')}
                 </Button>
             </div>
         </Card>

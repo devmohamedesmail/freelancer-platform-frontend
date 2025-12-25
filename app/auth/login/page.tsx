@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/common/navbar";
+import { Footer } from "@/components/common/footer";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -18,8 +18,10 @@ import {
     Sparkles,
     Shield
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function LoginPage() {
+    const {t}=useTranslation()
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
@@ -62,7 +64,7 @@ export default function LoginPage() {
         <div className="min-h-screen flex flex-col bg-background">
             <Navbar />
 
-            <main className="flex-1 flex items-center justify-center px-4 py-12 relative overflow-hidden">
+            <main className="flex-1 flex items-center justify-center px-4 py-12 relative overflow-hidden mt-10">
                 {/* Animated Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-background" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.15),transparent_50%)]" />
@@ -76,10 +78,12 @@ export default function LoginPage() {
                             <span className="text-sm font-medium text-primary">Secure Login</span>
                         </div>
                         <h1 className="text-4xl font-bold mb-2">
-                            Welcome <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Back</span>
+                            {t('auth.welcome_back')}
+                           
                         </h1>
                         <p className="text-muted-foreground">
-                            Sign in to access your dashboard and continue learning
+                            {t('auth.login_to_continue')}
+                            
                         </p>
                     </div>
 
@@ -89,7 +93,7 @@ export default function LoginPage() {
                             {/* Email Field */}
                             <div>
                                 <label htmlFor="email" className="block text-sm font-medium mb-2">
-                                    Email Address
+                                   {t('auth.email')}
                                 </label>
                                 <div className="relative">
                                     <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -113,7 +117,7 @@ export default function LoginPage() {
                             {/* Password Field */}
                             <div>
                                 <label htmlFor="password" className="block text-sm font-medium mb-2">
-                                    Password
+                                   {t('auth.password')}
                                 </label>
                                 <div className="relative">
                                     <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -157,20 +161,20 @@ export default function LoginPage() {
                                         htmlFor="remember"
                                         className="text-sm text-muted-foreground cursor-pointer"
                                     >
-                                        Remember me
+                                        {t('auth.remember_me')}
                                     </label>
                                 </div>
                                 <Link
                                     href="/auth/forgot-password"
                                     className="text-sm text-primary hover:underline"
                                 >
-                                    Forgot password?
+                                     {t('auth.forget_password')}
                                 </Link>
                             </div>
 
                             {/* Submit Button */}
                             <Button type="submit" className="w-full h-12 text-base gap-2" size="lg">
-                                Sign In
+                                {t('auth.login')}
                                 <ArrowRight className="w-5 h-5" />
                             </Button>
                         </form>
@@ -211,29 +215,14 @@ export default function LoginPage() {
 
                         {/* Sign Up Link */}
                         <p className="text-center text-sm text-muted-foreground mt-6">
-                            Don't have an account?{" "}
+                             {t('auth.dont_have_account')}
                             <Link href="/auth/register" className="text-primary font-medium hover:underline">
-                                Sign up for free
+                                 {t('auth.create_account')}
                             </Link>
                         </p>
                     </div>
 
-                    {/* Features */}
-                    <div className="mt-8 grid grid-cols-3 gap-4 animate-fade-in-up animation-delay-400">
-                        {[
-                            { icon: Sparkles, text: "Premium Content" },
-                            { icon: Shield, text: "Secure & Safe" },
-                            { icon: ArrowRight, text: "Quick Access" },
-                        ].map((feature, index) => (
-                            <div
-                                key={index}
-                                className="text-center p-4 rounded-xl bg-muted/50 hover:bg-muted transition-colors"
-                            >
-                                <feature.icon className="w-6 h-6 mx-auto mb-2 text-primary" />
-                                <p className="text-xs text-muted-foreground">{feature.text}</p>
-                            </div>
-                        ))}
-                    </div>
+                   
                 </div>
             </main>
 

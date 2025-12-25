@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/common/navbar";
+import { Footer } from "@/components/common/footer";
 import { EnhancedCourseCard } from "@/components/EnhancedCourseCard";
 import { CourseFilters } from "@/components/CourseFilters";
 import { Input } from "@/components/ui/input";

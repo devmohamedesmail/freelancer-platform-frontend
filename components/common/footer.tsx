@@ -11,8 +11,9 @@ import {
     MapPin,
     Phone,
 } from "lucide-react";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import NewsLetter from "./news-letter";
 
 const footerLinks = {
     categories: [
@@ -50,30 +51,7 @@ export function Footer() {
     return (
         <footer className="bg-muted/50 border-t border-border">
             {/* Newsletter Section */}
-            <div className="border-b border-border">
-                <div className="max-w-7xl mx-auto px-4 py-12">
-                    <div className="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h3 className="text-2xl font-bold mb-2">
-                                Subscribe to Our Newsletter
-                            </h3>
-                            <p className="text-muted-foreground">
-                                Get the latest updates, tips, and exclusive offers delivered to your inbox
-                            </p>
-                        </div>
-                        <div className="flex gap-2">
-                            <Input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="flex-1"
-                            />
-                            <Button className="gradient-primary text-white px-6">
-                                Subscribe
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           <NewsLetter />
 
             {/* Main Footer Content */}
             <div className="max-w-7xl mx-auto px-4 py-12">

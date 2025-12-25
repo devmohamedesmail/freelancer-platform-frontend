@@ -2,8 +2,10 @@
 
 import React from "react";
 import { Star, ArrowRight, TrendingUp } from "lucide-react";
-import { FreelancerCard } from "./FreelancerCard";
-import { Button } from "./ui/button";
+import { FreelancerCard } from "../FreelancerCard";
+import { Button } from "../ui/button";
+import { useTranslation } from "react-i18next";
+import "@/lib/i18n";
 
 const topFreelancers = [
     {
@@ -53,6 +55,8 @@ const topFreelancers = [
 ];
 
 export function TopFreelancersSection() {
+    const { t } = useTranslation();
+
     return (
         <section className="py-20 px-4">
             <div className="max-w-7xl mx-auto">
@@ -62,18 +66,17 @@ export function TopFreelancersSection() {
                         <div className="flex items-center gap-2 mb-2">
                             <TrendingUp className="w-6 h-6 text-primary" />
                             <span className="text-sm font-semibold text-primary uppercase tracking-wide">
-                                Top Rated
+                                {t('top_freelancers.badge')}
                             </span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                            High-Rated{" "}
+                            {/* {t('top_freelancers.title_part1')}{" "} */}
                             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                                Freelancers
+                                {t('top_freelancers.title_highlight')}
                             </span>
                         </h2>
                         <p className="text-lg text-muted-foreground max-w-2xl">
-                            Work with the best professionals who have proven track records and
-                            excellent reviews
+                            {t('top_freelancers.subtitle')}
                         </p>
                     </div>
                     <Button
@@ -81,7 +84,7 @@ export function TopFreelancersSection() {
                         size="lg"
                         className="hidden md:flex group"
                     >
-                        View All
+                        {t('top_freelancers.view_all')}
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                 </div>
@@ -100,7 +103,7 @@ export function TopFreelancersSection() {
                         size="lg"
                         className="group"
                     >
-                        View All Freelancers
+                        {t('top_freelancers.view_all_freelancers')}
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                 </div>

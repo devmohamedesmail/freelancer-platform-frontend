@@ -2,8 +2,10 @@
 
 import React from "react";
 import { GraduationCap, Play, Clock, Star, ArrowRight } from "lucide-react";
-import { Card, CardContent } from "./ui/card";
-import { Button } from "./ui/button";
+import { Card, CardContent } from "../ui/card";
+import { Button } from "../ui/button";
+import { useTranslation } from "react-i18next";
+import "@/lib/i18n";
 
 const courses = [
     {
@@ -13,7 +15,7 @@ const courses = [
         students: 45230,
         duration: "52 hours",
         price: 89.99,
-        category: "Development",
+        category: "courses.category.development",
     },
     {
         title: "Graphic Design Masterclass",
@@ -22,7 +24,7 @@ const courses = [
         students: 32150,
         duration: "38 hours",
         price: 79.99,
-        category: "Design",
+        category: "courses.category.design",
     },
     {
         title: "Digital Marketing Complete Course",
@@ -31,11 +33,13 @@ const courses = [
         students: 28940,
         duration: "45 hours",
         price: 94.99,
-        category: "Marketing",
+        category: "courses.category.marketing",
     },
 ];
 
 export function CoursesSection() {
+    const { t } = useTranslation();
+
     return (
         <section className="py-20 px-4">
             <div className="max-w-7xl mx-auto">
@@ -45,17 +49,12 @@ export function CoursesSection() {
                         <div className="flex items-center gap-2 mb-2">
                             <GraduationCap className="w-6 h-6 text-primary" />
                             <span className="text-sm font-semibold text-primary uppercase tracking-wide">
-                                Learn & Grow
+                                {t('courses.badge')}
                             </span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                            Featured{" "}
-                            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                                Courses
-                            </span>
-                        </h2>
+                        
                         <p className="text-lg text-muted-foreground max-w-2xl">
-                            Enhance your skills with expert-led courses and stay ahead in your field
+                            {t('courses.subtitle')}
                         </p>
                     </div>
                     <Button
@@ -63,7 +62,7 @@ export function CoursesSection() {
                         size="lg"
                         className="hidden md:flex group"
                     >
-                        View All Courses
+                        {t('courses.view_all')}
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                 </div>
@@ -80,7 +79,7 @@ export function CoursesSection() {
                                     <Play className="w-8 h-8 text-primary ml-1" />
                                 </div>
                                 <div className="absolute top-4 right-4 px-3 py-1 bg-background/90 backdrop-blur-sm rounded-full text-xs font-semibold">
-                                    {course.category}
+                                    {t(course.category)}
                                 </div>
                             </div>
                             <CardContent className="p-6">
@@ -88,7 +87,7 @@ export function CoursesSection() {
                                     {course.title}
                                 </h3>
                                 <p className="text-sm text-muted-foreground mb-4">
-                                    by {course.instructor}
+                                    {t('courses.by')} {course.instructor}
                                 </p>
 
                                 <div className="flex items-center gap-4 mb-4 text-sm">
@@ -105,7 +104,7 @@ export function CoursesSection() {
                                 <div className="flex items-center justify-between pt-4 border-t border-border">
                                     <div>
                                         <p className="text-xs text-muted-foreground">
-                                            {course.students.toLocaleString()} students
+                                            {course.students.toLocaleString()} {t('courses.students')}
                                         </p>
                                     </div>
                                     <div className="text-right">
@@ -126,7 +125,7 @@ export function CoursesSection() {
                         size="lg"
                         className="group"
                     >
-                        View All Courses
+                        {t('courses.view_all')}
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                 </div>
