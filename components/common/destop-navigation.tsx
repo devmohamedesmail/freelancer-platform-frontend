@@ -22,7 +22,7 @@ export default function DestopNavigation() {
     const {categories} = useCategories()
 
 
-console.log("Destop " ,categories)
+
   
     return (
         <div className="hidden lg:flex items-center space-x-6">

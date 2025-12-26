@@ -39,7 +39,14 @@
     "create_account": "Create Account",
     "welcome_back": " Welcome Back",
     "login_to_continue": "Sign in to access your dashboard and continue learning",
-    "forget_password": "Forget password"
+    "forget_password": "Forget password",
+    "login_success": "Login successful",
+    "login_failed": "Login failed",
+    "logout_success": "Logged out successfully",
+    "logout_failed": "Logout failed",
+    "dont_have_account": "Don't have an account? ",
+    "register_success": "Registration successful",
+    "register_failed": "Registration failed"
   },
   "navbar": {
     "categories": "Categories",
@@ -81,7 +88,11 @@
     "home": "Home",
     "account": "Account",
     "courses": "Courses",
-    "store": "Store"
+    "store": "Store",
+    "logout": "Logout",
+    "cancel": " Cancel ",
+    "submit": " Submit",
+    "save": "Save"
   },
   "courses": {
     "badge": "Courses",
@@ -93,12 +104,19 @@
     "title": "Developer Store",
     "description": "Explore tools, resources, and digital products made for developers"
   },
-  "newsletter":{
+  "newsletter": {
     "title": "Subscribe to our newsletter",
     "description": "Stay up to date with the latest news and updates from our platform",
     "placeholder": "Enter your email address",
     "button": "Subscribe",
-    "enter_email":"Enter Your Email Address"
+    "enter_email": "Enter Your Email Address"
+  },
+  "profile": {
+    "my_profile": "My Profile",
+    "description": "Your personal account information",
+    "edit_profile": "Edit Profile",
+    "name": "Name",
+    "bio": "Bio",
+    "personalInfo": " PersonalInfo "
   }
- 
 }

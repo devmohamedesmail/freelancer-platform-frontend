@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import i18n from "@/lib/i18n";
 import AuthProvider from "@/context/AuthProvider";
 import CategoriesProvider from "@/context/CategoriesProvider";
+import { Toaster } from 'react-hot-toast';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -56,10 +57,8 @@ export default function RootLayout({
       >
         <CategoriesProvider>
           <AuthProvider>
-
             {children}
-
-
+            <Toaster />
           </AuthProvider>
         </CategoriesProvider>
 

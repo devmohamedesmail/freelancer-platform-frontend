@@ -1,9 +1,7 @@
 "use client";
-
-import React, { useState, useEffect } from "react";
-import { Search, Menu, X, Globe, User, Moon, Sun, ShoppingBag, GraduationCap, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, Globe, User, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -16,104 +14,10 @@ import Logo from "./logo";
 import DestopNavigation from "./destop-navigation";
 import { useRouter } from "next/navigation";
 import MenuMobile from "./menu-mobile";
+import { useAuth } from "@/context/AuthProvider";
+import toast from 'react-hot-toast';
 
-const categories = [
-    {
-        name: "navbar.categories_list.graphics_design",
-        subcategories: [
-            "navbar.subcategories.logo_design",
-            "navbar.subcategories.brand_style_guides",
-            "navbar.subcategories.game_design",
-            "navbar.subcategories.graphics_streamers",
-            "navbar.subcategories.business_cards",
-            "navbar.subcategories.illustration",
-            "navbar.subcategories.pattern_design"
-        ]
-    },
-    {
-        name: "navbar.categories_list.programming_tech",
-        subcategories: [
-            "navbar.subcategories.website_development",
-            "navbar.subcategories.mobile_apps",
-            "navbar.subcategories.desktop_applications",
-            "navbar.subcategories.game_development",
-            "navbar.subcategories.ai_development",
-            "navbar.subcategories.blockchain",
-            "navbar.subcategories.cybersecurity"
-        ]
-    },
-    {
-        name: "navbar.categories_list.digital_marketing",
-        subcategories: [
-            "navbar.subcategories.social_media_marketing",
-            "navbar.subcategories.seo",
-            "navbar.subcategories.content_marketing",
-            "navbar.subcategories.video_marketing",
-            "navbar.subcategories.email_marketing",
-            "navbar.subcategories.influencer_marketing",
-            "navbar.subcategories.community_management"
-        ]
-    },
-    {
-        name: "navbar.categories_list.video_animation",
-        subcategories: [
-            "navbar.subcategories.video_editing",
-            "navbar.subcategories.animation",
-            "navbar.subcategories.whiteboard_explainers",
-            "navbar.subcategories.video_ads",
-            "navbar.subcategories.lyric_videos",
-            "navbar.subcategories.subtitles_captions"
-        ]
-    },
-    {
-        name: "navbar.categories_list.writing_translation",
-        subcategories: [
-            "navbar.subcategories.articles_blogs",
-            "navbar.subcategories.translation",
-            "navbar.subcategories.proofreading_editing",
-            "navbar.subcategories.resume_writing",
-            "navbar.subcategories.technical_writing",
-            "navbar.subcategories.creative_writing",
-            "navbar.subcategories.grant_writing"
-        ]
-    },
-    {
-        name: "navbar.categories_list.music_audio",
-        subcategories: [
-            "navbar.subcategories.music_production",
-            "navbar.subcategories.voice_over",
-            "navbar.subcategories.audio_editing",
-            "navbar.subcategories.sound_design",
-            "navbar.subcategories.podcast_editing",
-            "navbar.subcategories.audio_ads",
-            "navbar.subcategories.mixing_mastering"
-        ]
-    },
-    {
-        name: "navbar.categories_list.business",
-        subcategories: [
-            "navbar.subcategories.virtual_assistant",
-            "navbar.subcategories.market_research",
-            "navbar.subcategories.business_plans",
-            "navbar.subcategories.legal_consulting",
-            "navbar.subcategories.financial_consulting",
-            "navbar.subcategories.presentations",
-            "navbar.subcategories.data_entry"
-        ]
-    },
-    {
-        name: "navbar.categories_list.ai_services",
-        subcategories: [
-            "navbar.subcategories.ai_applications",
-            "navbar.subcategories.ai_chatbot",
-            "navbar.subcategories.ai_content",
-            "navbar.subcategories.ai_image_generation",
-            "navbar.subcategories.ai_video",
-            "navbar.subcategories.ai_music_audio",
-            "navbar.subcategories.ai_data_analysis"
-        ]
-    }
-];
+
 
 export function Navbar() {
     const { t, i18n } = useTranslation();
@@ -121,6 +25,9 @@ export function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [theme, setTheme] = useState<"light" | "dark">("light");
     const router = useRouter();
+    const { user, logout } = useAuth()
+
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -145,6 +52,26 @@ export function Navbar() {
 
     const currentLanguage = i18n.language === "ar" ? "AR" : "EN";
 
+
+
+    const handle_logout = () => {
+        try {
+            logout();
+            toast.success(t('auth.logout_success'),{
+                duration:3000,
+                position: 'top-center',
+               
+            });
+            router.push("/")
+        } catch (error) {
+            toast.error(t('auth.logout_success'),{
+                duration:3000,
+                position: 'top-center',
+             
+            });
+        }
+    }
+
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "glass-effect shadow-lg" : "bg-background/80 backdrop-blur-sm"
@@ -152,10 +79,7 @@ export function Navbar() {
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
-                    {/* Logo */}
                     <Logo />
-
-                    {/* Desktop Navigation */}
                     <DestopNavigation />
 
                     {/* Right Side Icons */}
@@ -193,10 +117,21 @@ export function Navbar() {
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end" className="w-48">
-                                <DropdownMenuItem onClick={() => router.push('/auth/login')}>{t('auth.login')}</DropdownMenuItem>
-                                <DropdownMenuItem onClick={() => router.push('/auth/register')}>{t('auth.register')}</DropdownMenuItem>
-                                <DropdownMenuItem>{t('auth.profile')}</DropdownMenuItem>
-                                <DropdownMenuItem>{t('auth.settings')}</DropdownMenuItem>
+
+
+                                {user ? (
+                                    <>
+                                        <DropdownMenuItem onClick={() => router.push('/auth/profile')}>{t('auth.profile')}</DropdownMenuItem>
+                                        <DropdownMenuItem>{t('auth.settings')}</DropdownMenuItem>
+                                        <DropdownMenuItem onClick={() => handle_logout()}>{t('auth.logout')}</DropdownMenuItem>
+                                    </>
+                                ) : (
+                                    <>
+                                        <DropdownMenuItem onClick={() => router.push('/auth/login')}>{t('auth.login')}</DropdownMenuItem>
+                                        <DropdownMenuItem onClick={() => router.push('/auth/register')}>{t('auth.register')}</DropdownMenuItem></>
+                                )}
+
+
                             </DropdownMenuContent>
                         </DropdownMenu>
 
@@ -223,11 +158,11 @@ export function Navbar() {
                     currentLanguage={currentLanguage}
                     toggleTheme={toggleTheme}
                     theme={theme}
-                   
-                    
+
+
                 />
 
-              
+
             </div>
         </nav>
     );

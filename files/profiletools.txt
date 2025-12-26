@@ -1,0 +1,41 @@
+  <div className="gradient-card rounded-2xl p-6 border border-border">
+                <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+                    <Package className="w-5 h-5" />
+                    Published Tools ({publishedTools.length})
+                </h3>
+
+                <div className="space-y-4">
+                    {publishedTools.map((tool) => (
+                        <div
+                            key={tool.id}
+                            className="flex items-center gap-4 p-4 rounded-xl border border-border hover:border-primary/50 transition-all"
+                        >
+                            <img
+                                src={tool.image}
+                                alt={tool.name}
+                                className="w-20 h-20 rounded-lg object-cover"
+                            />
+                            <div className="flex-1">
+                                <h4 className="font-semibold mb-1">{tool.name}</h4>
+                                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                                    <div className="flex items-center gap-1">
+                                        <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                                        {tool.rating}
+                                    </div>
+                                    <div className="flex items-center gap-1">
+                                        <Download className="w-4 h-4" />
+                                        {tool.downloads.toLocaleString()} downloads
+                                    </div>
+                                    <div className="font-semibold text-primary">
+                                        ${tool.price}
+                                    </div>
+                                </div>
+                            </div>
+                            <Button variant="outline" size="sm">
+                                <Edit className="w-4 h-4 mr-2" />
+                                Edit
+                            </Button>
+                        </div>
+                    ))}
+                </div>
+            </div>

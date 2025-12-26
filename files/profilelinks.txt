@@ -1,0 +1,105 @@
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-border">
+                        <div>
+                            <label className="block text-sm font-medium mb-2">
+                                Website
+                            </label>
+                            {isEditing ? (
+                                <Input
+                                    value={userData.website || ""}
+                                    onChange={(e) => updateField("website", e.target.value)}
+                                    placeholder="https://yourwebsite.com"
+                                    className="h-11"
+                                />
+                            ) : (
+                                <div className="flex items-center gap-2">
+                                    <Globe className="w-4 h-4 text-muted-foreground" />
+                                    <a
+                                        href={userData.website}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-primary hover:underline"
+                                    >
+                                        {userData.website}
+                                    </a>
+                                </div>
+                            )}
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-medium mb-2">
+                                GitHub
+                            </label>
+                            {isEditing ? (
+                                <Input
+                                    value={userData.github || ""}
+                                    onChange={(e) => updateField("github", e.target.value)}
+                                    placeholder="https://github.com/username"
+                                    className="h-11"
+                                />
+                            ) : (
+                                <div className="flex items-center gap-2">
+                                    <Github className="w-4 h-4 text-muted-foreground" />
+                                    <a
+                                        href={userData.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-primary hover:underline"
+                                    >
+                                        GitHub
+                                    </a>
+                                </div>
+                            )}
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-medium mb-2">
+                                LinkedIn
+                            </label>
+                            {isEditing ? (
+                                <Input
+                                    value={userData.linkedin || ""}
+                                    onChange={(e) => updateField("linkedin", e.target.value)}
+                                    placeholder="https://linkedin.com/in/username"
+                                    className="h-11"
+                                />
+                            ) : (
+                                <div className="flex items-center gap-2">
+                                    <Linkedin className="w-4 h-4 text-muted-foreground" />
+                                    <a
+                                        href={userData.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-primary hover:underline"
+                                    >
+                                        LinkedIn
+                                    </a>
+                                </div>
+                            )}
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-medium mb-2">
+                                Twitter
+                            </label>
+                            {isEditing ? (
+                                <Input
+                                    value={userData.twitter || ""}
+                                    onChange={(e) => updateField("twitter", e.target.value)}
+                                    placeholder="https://twitter.com/username"
+                                    className="h-11"
+                                />
+                            ) : (
+                                <div className="flex items-center gap-2">
+                                    <Twitter className="w-4 h-4 text-muted-foreground" />
+                                    <a
+                                        href={userData.twitter}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-primary hover:underline"
+                                    >
+                                        Twitter
+                                    </a>
+                                </div>
+                            )}
+                        </div>
+                    </div>

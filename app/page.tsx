@@ -2,7 +2,6 @@ import { Navbar } from "@/components/common/navbar";
 import { HeroSection } from "@/components/home/HeroSection";
 import { TopFreelancersSection } from "@/components/home/TopFreelancersSection";
 import { CategoriesSection } from "@/components/home/CategoriesSection";
-import { ForClientsSection } from "@/components/ForClientsSection";
 import { CoursesSection } from "@/components/home/CoursesSection";
 import { DevStoreSection } from "@/components/home/DevStoreSection";
 import { Footer } from "@/components/common/footer";
@@ -16,7 +15,6 @@ export default function Home() {
         <HeroSection />
         <TopFreelancersSection />
         <CategoriesSection />
-        {/* <ForClientsSection /> */}
         <CoursesSection />
         <DevStoreSection />
       </main>

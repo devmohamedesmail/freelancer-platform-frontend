@@ -39,7 +39,14 @@
         "create_account": "إنشاء حساب",
         "welcome_back": "مرحبًا بعودتك",
         "login_to_continue": "سجّل الدخول للوصول إلى لوحة التحكم ومتابعة التعلم",
-        "forget_password": "نسيت كلمة المرور"
+        "forget_password": "نسيت كلمة المرور",
+        "login_success": "تم تسجيل الدخول بنجاح",
+        "login_failed": "فشل تسجيل الدخول",
+        "logout_success": "تم تسجيل الخروج بنجاح",
+        "logout_failed": "فشل تسجيل الخروج",
+        "dont_have_account": " ليس لديك حساب؟ ",
+        "register_success": "تم إنشاء الحساب بنجاح",
+        "register_failed": "فشل إنشاء الحساب"
     },
     "navbar": {
         "categories": "الفئات",
@@ -81,7 +88,11 @@
         "home": "الرئيسية",
         "account": "الحساب",
         "courses": "الدورات",
-        "store": "المتجر"
+        "store": "المتجر",
+        "logout": "تسجيل الخروج",
+        "cancel": "إلغاء",
+        "submit": "إرسال",
+        "save": "حفظ"
     },
     "courses": {
         "badge": "الدورات",
@@ -99,5 +110,13 @@
         "placeholder": "أدخل بريدك الإلكتروني",
         "button": "اشترك الآن",
         "enter_email": "أدخل بريدك الإلكتروني"
+    },
+    "profile": {
+        "my_profile": "ملفي الشخصي",
+        "description": "معلومات حسابك الشخصية",
+        "edit_profile": "تعديل الملف الشخصي",
+        "name": "الاسم",
+        "bio": "نبذة عني",
+        "personalInfo": " المعلومات الشخصية"
     }
 }

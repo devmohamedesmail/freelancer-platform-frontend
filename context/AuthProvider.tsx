@@ -8,6 +8,9 @@ interface User {
   id: number;
   username: string;
   email: string;
+  avatar:string,
+  bio:string,
+  country:string
 }
 
 
@@ -24,8 +27,8 @@ export interface LoginPayload {
 
 interface AuthContextType {
   user: User | null;
-  login: (data: LoginPayload) => Promise<void>;
-  register: (data: RegisterPayload) => Promise<void> ;
+  login: (data: LoginPayload) => Promise<boolean>;
+  register: (data: RegisterPayload) => Promise<boolean> ;
   logout: () => void;
 }
 
@@ -65,8 +68,18 @@ const [user, setUser] = useState<User | null>(null);
     }
   }
 
-  const login = async (data: LoginPayload) => {
-    
+  const login = async ({identifier, password}: LoginPayload) => {
+    try {
+      const response = await axios.post('https://freelancer-platform-backend-dkqh.onrender.com/api/auth/local',{
+        identifier: identifier,
+        password: password,
+      })
+      const userData = response.data.user
+      setUser(userData);
+      localStorage.setItem("user", JSON.stringify(userData));
+      return userData;
+    } catch (error) {
+      console.log(error)}
   }
 
 
