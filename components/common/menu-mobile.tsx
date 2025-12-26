@@ -6,7 +6,7 @@ import { useCategories } from "@/context/CategoriesProvider";
 import { useTranslation } from 'react-i18next';
 
 
-interface Porps{
+interface Porps {
     isMobileMenuOpen: boolean,
     toggleLanguage: () => void,
     currentLanguage: string,
@@ -14,12 +14,6 @@ interface Porps{
     theme: string,
 }
 
-interface Category{
-    id:number,
-    name_ar: string,
-    name_en: string,
-    subcategories?: Category[],
-}
 
 export default function MenuMobile({
     isMobileMenuOpen,
@@ -29,8 +23,8 @@ export default function MenuMobile({
     theme,
 
 }: Porps) {
-     const {categories} = useCategories()
-     const {t}=useTranslation()
+    const { categories } = useCategories()
+    const { t } = useTranslation()
     return (
         <div>
 
@@ -50,14 +44,14 @@ export default function MenuMobile({
                         {/* Mobile Categories */}
                         <div className="space-y-2">
                             <p className="font-semibold text-sm text-muted-foreground px-2">{t('navbar.categories')}</p>
-                            {categories.map((category:Category) => (
+                            {categories.map((category) => (
                                 <details key={category.name_ar} className="group">
                                     <summary className="cursor-pointer px-2 py-2 hover:bg-accent rounded-md list-none flex items-center justify-between">
                                         <span>{t(category.name_ar)}</span>
                                         <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform" />
                                     </summary>
                                     <div className="pl-4 mt-1 space-y-1">
-                                        {category.subcategories?.map((sub:Category) => (
+                                        {category.subcategories?.map((sub) => (
                                             <a
                                                 key={sub.id}
                                                 href="#"
@@ -81,7 +75,7 @@ export default function MenuMobile({
                                 <ShoppingBag className="w-4 h-4" />
                                 {t('navbar.dev_store')}
                             </Button>
-                            
+
                             <div className="flex gap-2 pt-2">
                                 <Button
                                     variant="outline"
