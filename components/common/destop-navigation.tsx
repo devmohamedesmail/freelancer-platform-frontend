@@ -36,9 +36,9 @@ export default function DestopNavigation() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56 max-h-[500px] overflow-y-auto">
                     {categories && categories.map((category) => (
-                        <DropdownMenuSub key={category.name}>
+                        <DropdownMenuSub key={category.name_en}>
                             <DropdownMenuSubTrigger>
-                                {i18n.language === 'ar' ? category.name_ar : category.name}
+                                {i18n.language === 'ar' ? category.name_ar : category.name_en}
                             </DropdownMenuSubTrigger>
                             <DropdownMenuSubContent className="w-48">
                                 {category.subcategories && category.subcategories.map((sub) => (
