@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 interface Category {
     name_ar: string;
     name_en: string;
-    icon: LucideIcon;
+    icon: string;
 
 }
 
@@ -16,7 +16,7 @@ interface CategoryCardProps {
     category: Category;
 }
 
-export function CategoryCard({ category }: CategoryCardProps) {
+export function CategoryCard({ category }:CategoryCardProps) {
     const {t,i18n}=useTranslation()
     return (
         <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer overflow-hidden">

@@ -1,15 +1,5 @@
 "use client";
-import {
-    Code2,
-    Palette,
-    Video,
-    PenTool,
-    Megaphone,
-    Music,
-    BarChart3,
-    Sparkles,
-    ArrowRight,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { CategoryCard } from "../CategoryCard";
 import { Button } from "../ui/button";
 import { useTranslation } from "react-i18next";
@@ -20,7 +10,7 @@ import { useCategories } from "@/context/CategoriesProvider";
 
 export function CategoriesSection() {
     const { t } = useTranslation();
-    const {categories} = useCategories();
+    const { categories } = useCategories();
 
     return (
         <section className="py-20 px-4 bg-muted/30">
@@ -41,7 +31,7 @@ export function CategoriesSection() {
                 {/* Categories Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                     {categories && categories.map((category) => (
-                        <CategoryCard key={category.name} category={category} />   
+                        <CategoryCard key={category.id} category={category} />
                     ))}
                 </div>
 
