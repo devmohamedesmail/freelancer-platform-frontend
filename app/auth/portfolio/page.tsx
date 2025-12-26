@@ -55,8 +55,8 @@ export default function PortfolioPage() {
                             {/* Avatar */}
                             <div className="relative">
                                 <img
-                                    src={currentUser.avatar}
-                                    alt={currentUser.name}
+                                    src={currentUser?.avatar}
+                                    alt={currentUser?.name}
                                     className="w-40 h-40 rounded-full border-4 border-primary/20 shadow-2xl"
                                 />
                                 {currentUser.verified && (
@@ -265,8 +265,8 @@ export default function PortfolioPage() {
                                 >
                                     <div className="aspect-video overflow-hidden bg-muted">
                                         <img
-                                            src={project.image}
-                                            alt={project.title}
+                                            src={project?.image}
+                                            alt={project?.title}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                         />
                                     </div>
@@ -343,8 +343,8 @@ export default function PortfolioPage() {
                                 >
                                     <div className="aspect-video overflow-hidden bg-muted">
                                         <img
-                                            src={course.image}
-                                            alt={course.title}
+                                            src={course?.image}
+                                            alt={course?.title}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                         />
                                     </div>
