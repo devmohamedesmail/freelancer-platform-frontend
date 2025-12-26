@@ -17,13 +17,17 @@ import "@/lib/i18n";
 import { useCategories } from "@/context/CategoriesProvider";
 import i18n from "@/lib/i18n";
 
+
+
+
+
 export default function DestopNavigation() {
     const { t } = useTranslation();
-    const {categories} = useCategories()
+    const { categories } = useCategories()
 
 
 
-  
+
     return (
         <div className="hidden lg:flex items-center space-x-6">
             {/* Categories Dropdown */}
@@ -41,8 +45,8 @@ export default function DestopNavigation() {
                                 {i18n.language === 'ar' ? category.name_ar : category.name_en}
                             </DropdownMenuSubTrigger>
                             <DropdownMenuSubContent className="w-48">
-                                {category.subcategories && category.subcategories.map((sub) => (
-                                    <DropdownMenuItem key={sub}>
+                                {category?.subcategories?.map((sub) => (
+                                    <DropdownMenuItem key={sub.id}>
                                         {i18n.language === 'ar' ? sub.name_ar : sub.name_en}
                                     </DropdownMenuItem>
                                 ))}
