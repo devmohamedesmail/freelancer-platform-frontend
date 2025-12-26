@@ -22,7 +22,7 @@ interface User{
 }
 export default function BottomNavigation() {
     const { t } = useTranslation()
-    const { auth } = useAuth();
+    const { user } = useAuth();
     return (
         <div className='fixed bottom-0 right-0 left-0 bg-gradient-to-r from-blue-500 to-green-900  py-3 px-5 block md:hidden z-50'>
             <div className='flex flex-row justify-between items-center'>
@@ -31,7 +31,7 @@ export default function BottomNavigation() {
                     href='/' title={t('common.home')} />
                 <NavItem
                     icon={User}
-                    href={auth ? '/auth/profile' : "/auth/login"} title={t('common.account')} />
+                    href={user ? '/auth/profile' : "/auth/login"} title={t('common.account')} />
                 <NavItem
                     icon={GraduationCap}
                     href='/courses' title={t('common.courses')} />
