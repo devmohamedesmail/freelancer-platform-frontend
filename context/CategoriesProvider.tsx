@@ -18,6 +18,11 @@ interface CategoriesContextType {
   categories: Category[];
 }
 
+
+interface ApiResponse<T> {
+  data: T;
+}
+
 const CategoriesContext = createContext<CategoriesContextType | undefined>(undefined);
 
 
@@ -28,7 +33,7 @@ export default function CategoriesProvider({ children }: { children: ReactNode }
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get<Category[]>(
+        const response = await axios.get<ApiResponse<Category[]>>(
           "https://freelancer-platform-backend-dkqh.onrender.com/api/categories?populate[subcategories][populate]=*",
           {
             headers: {
@@ -37,7 +42,7 @@ export default function CategoriesProvider({ children }: { children: ReactNode }
             }
           }
         );
-        // فقط حدث الـ state بعد أن تنتهي العملية
+       
         setCategories(response.data.data);
       } catch (error) {
         console.log(error);

@@ -24,10 +24,6 @@ import i18n from "@/lib/i18n";
 export default function DestopNavigation() {
     const { t } = useTranslation();
     const { categories } = useCategories()
-
-
-
-
     return (
         <div className="hidden lg:flex items-center space-x-6">
             {/* Categories Dropdown */}
